@@ -18,7 +18,7 @@ if "active_analysis" not in st.session_state:
 st.sidebar.header("📁 Carregar Arquivo")
 uploaded_file = st.sidebar.file_uploader("Envie um arquivo Excel", type=["xlsx", "xls"])
 
-if st.sidebar.button("tempo"):
+if st.sidebar.button("Tempo de Entrega"):
     st.session_state.active_analysis = "tempo"
 
 # ----------------------------------------------
@@ -191,3 +191,4 @@ if st.session_state.active_analysis == "tempo":
     cols = [c for c in cols if c in amostra.columns]
 
     st.dataframe(amostra[cols].sort_values("tempo_dias", ascending=False).reset_index(drop=True))
+
